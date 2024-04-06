@@ -91,17 +91,17 @@ class Program
     {
         if (toolUse?.Name == "get_weather")
         {
-            var mockWeatherResponse = new
+            var wthRsps = new
             {
                 Result = $"The current weather in {toolUse.Input.location} is sunny with a high of 25°C."
             };
-            SendRsps(mockWeatherResponse);
+            SendRsps(wthRsps);
         }
     }
 
-    private static void SendRsps(object mockResponse)
+    private static void SendRsps(object xRsps)
     {
-        Console.WriteLine(JsonConvert.SerializeObject(mockResponse, Formatting.Indented));
+        Console.WriteLine(JsonConvert.SerializeObject(xRsps, Formatting.Indented));
     }
 
     public class ToolUseResponse
